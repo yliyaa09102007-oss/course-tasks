@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: rooms_students_db
+    environment:
+      POSTGRES_DB: rooms_db
+      POSTGRES_USER: de
+      POSTGRES_PASSWORD: secret
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_rooms_data:/var/lib/postgresql/data
+
+volumes:
+  pg_rooms_data:
